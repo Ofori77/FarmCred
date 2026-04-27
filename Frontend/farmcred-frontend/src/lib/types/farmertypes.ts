@@ -24,18 +24,20 @@ export interface FarmerOverview {
   id: number;
   full_name: string;
   trust_level_stars: number;
-  trust_score_percent: number;
+  trust_score_percent?: number;
   total_income_last_12_months: number;
   total_expenses: number;
-  current_month_income: number;
+  current_month_income?: number;
   current_month_expenses: number;
-  total_loans_taken: number;
-  active_loans: number;
-  overdue_loans: number;
+  total_loans_taken?: number;
+  active_loans?: number;
+  overdue_loans?: number;
   months_active?: number;
   is_source_verified?: boolean;
   source_verification_type?: string;
   date_paid?: string;
+  amount?: number;       // Add this!
+  on_time?: boolean;
 }
 
 export interface Transaction {
