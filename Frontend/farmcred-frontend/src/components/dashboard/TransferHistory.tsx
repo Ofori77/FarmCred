@@ -45,7 +45,7 @@ export default function TransferHistory() {
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{recipientName}</p>
               <p className="text-xs text-muted-foreground">
-                {transfer.transfer_type || "Transfer"}
+                {(transfer as any).transfer_type || "Transfer"}
               </p>
             </div>
             <div className="text-right">
