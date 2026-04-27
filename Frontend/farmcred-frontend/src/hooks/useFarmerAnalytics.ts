@@ -7,7 +7,7 @@ export function useFarmerAnalytics() {
   const { data: transactions } = useFarmerTransactions();
   const { data: chartData } = useFarmerTransactionsChart();
   const { data: listings } = useFarmerListings();
-  const [analytics, setAnalytics] = useState(null);
+  const [analytics, setAnalytics] = useState<any>(null);
 
   useEffect(() => {
     if (transactions && listings) {
