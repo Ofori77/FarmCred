@@ -72,6 +72,7 @@ export interface Transfer {
   recipient_or_sender?: string;
   sender?: string;
   transfer_type?: string;
+  notes?: string;
   id: number;
   transfer_id : string;
   farmer: number;
