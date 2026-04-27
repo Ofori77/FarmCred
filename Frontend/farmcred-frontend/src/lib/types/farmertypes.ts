@@ -53,9 +53,10 @@ export interface Transaction {
   date: string;
   created_at: string;
   updated_at: string;
-  buyer: string;
+  buyer?: string;
   related_order: string;
   account_party: number;
+  farmer?: string | number;    // Add this line!
 }
 
 export interface TransactionInput {
