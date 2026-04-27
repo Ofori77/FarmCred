@@ -42,6 +42,8 @@ export interface FarmerProfile {
   transactions?: any[];
   transfers?: any[];
   loans?: any[];
+  savings?: any[];
+  products?: any[];
 }
 
 export interface InvestorReview{
