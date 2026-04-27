@@ -91,7 +91,7 @@ export default function DisputeResolution() {
   };
 
   const getEscalatedCount = () => {
-    return disputes?.filter(d => d.status === "escalated").length || 0;
+    return disputes?.filter(d => d.status === "under_review").length || 0;
   };
 
   return (
@@ -246,7 +246,7 @@ export default function DisputeResolution() {
                       <TableCell>{new Date(dispute.dispute_date).toLocaleDateString()}</TableCell>
                       <TableCell>{getStatusBadge(dispute.status)}</TableCell>
                       <TableCell className="text-right">
-                        {dispute.status === "pending" && (
+                        {dispute.status === "open" && (
                           <Button 
                             variant="outline" 
                             size="sm" 
