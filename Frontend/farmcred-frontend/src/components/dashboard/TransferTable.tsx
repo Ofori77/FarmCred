@@ -73,8 +73,8 @@ const TransferTable = ({
     const query = search.toLowerCase();
     return (
       transfers.id.toString().toLowerCase().includes(query) ||
-      transfers.recipient_or_sender.toLowerCase().includes(query) ||
-      transfers.status.toLowerCase().includes(query) ||
+      (transfers.recipient_or_sender || "").toLowerCase().includes(query) ||
+      (transfers.status || "").toLowerCase().includes(query) ||
       transfers.amount.toString().includes(query)
     );
   });
