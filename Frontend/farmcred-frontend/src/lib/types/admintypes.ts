@@ -286,22 +286,25 @@ export interface AdminEscrowOverview {
 
 export interface AdminTrustAnalytics {
   average_trust_score: number;
-  trust_distribution: {
-    excellent: number; // 4.5-5.0
-    good: number;      // 3.5-4.4
-    fair: number;      // 2.5-3.4
-    poor: number;      // 1.0-2.4
+  total_farmers: number;
+  monthly_reviews_count: number;
+  
+  // Updated to match the page exactly
+  trust_level_distribution: {
+    level_5_stars: number;
+    level_4_stars: number;
+    level_3_stars: number;
+    level_2_stars: number;
+    level_1_stars: number;
   };
-  recent_adjustments: {
+  
+  // Updated to match the page exactly
+  recent_reviews: {
     id: number;
-    user_name: string;
-    old_score: number;
-    new_score: number;
-    reason: string;
-    adjusted_by: string;
+    investor_name: string;
+    farmer_name: string;
     created_at: string;
   }[];
-  monthly_reviews_count: number;
 }
 
 export interface AdminLoan {
