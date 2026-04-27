@@ -10,12 +10,14 @@ import { cn } from "@/lib/utils";
 import { useInvestorLoans } from "@/hooks/useInvestorData";
 
 const statusColorMap = {
-  repaid: "bg-green-100 text-green-700",
-  active: "bg-blue-100 text-blue-700",
-  pending: "bg-yellow-100 text-yellow-800",
-  approved: "bg-indigo-100 text-indigo-700",
-  declined: "bg-red-100 text-red-700",
-};
+  repaid: "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300",
+  active: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+  pending: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
+  approved: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300",
+  declined: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300",
+  defaulted: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300",
+  cancelled: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
+} as const;
 
 export default function LoanPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
