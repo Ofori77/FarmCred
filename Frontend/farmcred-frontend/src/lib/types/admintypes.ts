@@ -377,6 +377,7 @@ export interface AdminDispute {
   resolution_notes?: string;
   resolved_by?: string;
   resolved_at?: string;
+  dispute_date: string;
 }
 
 export interface BulkActionRequest {
