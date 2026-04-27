@@ -39,6 +39,7 @@ export interface FarmerProfile {
   receive_level_notifications?: boolean;
   receive_sms_notifications?: boolean;
   receive_email_notifications?: boolean;
+  transactions?: any[];
 }
 
 export interface InvestorReview{
