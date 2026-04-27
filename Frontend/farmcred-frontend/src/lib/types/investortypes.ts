@@ -77,7 +77,7 @@ export interface InvestorLoans{
       date_taken: string;
       due_date: string;
       date_repaid: string;
-      status:'pending' | 'approved' | 'repaid' | 'declined' | 'active';
+      status:'pending' | 'approved' | 'repaid' | 'declined' | 'active' | 'cancelled';
       on_time: boolean;
       interest_rate: number;
       repayment_period_months: number;
@@ -97,7 +97,7 @@ export interface InvestorInvestment{
       date_taken: string;
       due_date: string;
       date_repaid: string | null;
-      status:'pending' | 'approved' | 'repaid' | 'declined' | 'active';
+      status:'pending' | 'approved' | 'repaid' | 'declined' | 'active' | 'cancelled';
       on_time: boolean;
       interest_rate: number;
       repayment_period_months: number;
