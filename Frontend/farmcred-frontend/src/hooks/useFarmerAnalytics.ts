@@ -20,7 +20,7 @@ export function useFarmerAnalytics() {
       const totalListings = listings?.length || 0;
 
       // Seasonal patterns analysis
-      const monthlyData = transactions?.reduce((acc, transaction) => {
+      const monthlyData = transactions?.reduce((acc: any, transaction: any) => {
         const month = new Date(transaction.date).getMonth();
         const monthName = new Date(0, month).toLocaleString('default', { month: 'long' });
         
@@ -39,7 +39,7 @@ export function useFarmerAnalytics() {
       // Best performing products
       const productPerformance = transactions
         ?.filter(t => t.category === 'produce_sale')
-        .reduce((acc, transaction) => {
+        .reduce((acc: any, transaction: any) => {
           // Extract product from description or use listing data
           const product = 'Unknown'; // You'll need to enhance this based on your data structure
           
