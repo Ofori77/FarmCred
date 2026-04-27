@@ -1,4 +1,4 @@
-import { FarmerOverview, Transaction, Transfer } from "@/lib/types";
+import { FarmerOverview, Transaction, Transfer } from "@/lib/types/farmertypes";
 import {
   format,
   startOfWeek,
