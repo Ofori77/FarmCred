@@ -1,6 +1,7 @@
 export interface InvestorProfile{
   account_id: number;
   full_name:string;
+  bio?: string;
   phone_number?: number;
   country?: string;
   region?: string;
