@@ -158,6 +158,7 @@ export interface FarmerOrder{
 };
 
 export interface FarmerProduct {
+  id?: string | number;
   dateAdded: string;
   imageUrl: string;
   name: string;
