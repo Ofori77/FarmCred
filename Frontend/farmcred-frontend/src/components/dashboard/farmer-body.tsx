@@ -107,7 +107,7 @@ export default function FarmerDashboard() {
                 Trust Score
               </CardTitle>
               <CardContent className="text-3xl font-semibold px-0">
-                {overview && \${Math.round(overview.trust_score_percent || 0)}%`}`
+                {overview && Math.round(overview.trust_score_percent || 0) + "%"}
                 {overview && (
                   <Progress
                     value={overview.trust_score_percent || 0}
