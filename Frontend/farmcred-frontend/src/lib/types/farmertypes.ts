@@ -71,6 +71,7 @@ export interface Transfer {
   length: number;
   recipient_or_sender?: string;
   sender?: string;
+  transfer_type?: string;
   id: number;
   transfer_id : string;
   farmer: number;
