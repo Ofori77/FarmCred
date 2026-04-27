@@ -133,14 +133,14 @@ export default function TrustBreakdown() {
   };
 
   const trustLevel = getTrustLevel(safeOverview.trust_score_percent);
-  const repaymentRate =
-    safeOverview.total_loans_taken > 0
-      ? (safeOverview.active_loans / safeOverview.total_loans_taken) * 100
+const repaymentRate =
+    (safeOverview.total_loans_taken || 0) > 0
+      ? ((safeOverview.active_loans || 0) / (safeOverview.total_loans_taken || 1)) * 100
       : 0;
-  const onTimePaymentRate =
-    safeOverview.total_loans > 0
+const onTimePaymentRate =
+    (safeOverview.total_loans_taken || 0) > 0
       ? Math.round(
-          (safeOverview.active_loans / safeOverview.total_loans_taken) * 100
+          ((safeOverview.active_loans || 0) / (safeOverview.total_loans_taken || 1)) * 100
         )
       : 0;
 
