@@ -315,6 +315,7 @@ export interface AdminLoan {
   interest_rate: number;
   status: 'active' | 'completed' | 'defaulted' | 'pending';
   disbursed_date: string;
+  date_taken: string;
   due_date: string;
   repaid_date?: string;
   remaining_balance: number;
