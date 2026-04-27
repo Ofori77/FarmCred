@@ -356,8 +356,8 @@ const onTimePaymentRate =
                 Monthly Income
               </span>
               <span className="font-bold text-[#158f20]">
-                GH₵{safeOverview.current_month_income.toLocaleString()}
-              </span>
+  GH₵{(safeOverview.current_month_income || 0).toLocaleString()}
+</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-gray-50 dark:bg-accent rounded-lg">
               <span className="text-sm font-medium text-gray-600 dark:text-gray-200">
