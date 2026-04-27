@@ -235,9 +235,9 @@ export default function DisputeResolution() {
                   {filteredDisputes.map((dispute) => (
                     <TableRow key={dispute.id}>
                       <TableCell>#{dispute.id}</TableCell>
-                      <TableCell>{dispute.buyer_name}</TableCell>
-                      <TableCell>{dispute.farmer_name}</TableCell>
-                      <TableCell>GH₵ {Number(dispute?.total_amount).toFixed(2)}</TableCell>
+                      <TableCell>{dispute.order_details?.buyer_name}</TableCell>
+                      <TableCell>{dispute.order_details?.farmer_name}</TableCell>
+                      <TableCell>GH₵ {Number(dispute.order_details?.amount).toFixed(2)}</TableCell>
                       <TableCell>
                         <div className="max-w-[200px] truncate" title={dispute.dispute_reason}>
                           {dispute.dispute_reason}
@@ -317,14 +317,14 @@ export default function DisputeResolution() {
               <h4 className="font-medium text-sm text-gray-700">Dispute Details</h4>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <div className="text-gray-500">Buyer:</div>
-                <div>{selectedDispute?.buyer_name}</div>
+                <div>{selectedDispute?.order_details?.buyer_name}</div>
                 <div className="text-gray-500">Farmer:</div>
-                <div>{selectedDispute?.farmer_name}</div>
+                <div>{selectedDispute?.order_details?.farmer_name}</div>
                 <div className="text-gray-500">Amount:</div>
-                <div>GH₵ {selectedDispute?.total_amount.toFixed(2)}</div>
+                <div>GH₵ {Number(selectedDispute?.order_details?.amount || 0).toFixed(2)}</div>
                 <div className="text-gray-500">Reason:</div>
                 <div>{selectedDispute?.dispute_reason}</div>
-              </div>
+            </div>
             </div>
 
             <div className="space-y-2">
