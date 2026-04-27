@@ -40,6 +40,7 @@ export interface FarmerProfile {
   receive_sms_notifications?: boolean;
   receive_email_notifications?: boolean;
   transactions?: any[];
+  transfers?: any[];
 }
 
 export interface InvestorReview{
