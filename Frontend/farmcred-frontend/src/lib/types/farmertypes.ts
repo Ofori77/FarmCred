@@ -32,6 +32,10 @@ export interface FarmerOverview {
   total_loans_taken: number;
   active_loans: number;
   overdue_loans: number;
+  months_active?: number;
+  is_source_verified?: boolean;
+  source_verification_type?: string;
+  date_paid?: string;
 }
 
 export interface Transaction {
