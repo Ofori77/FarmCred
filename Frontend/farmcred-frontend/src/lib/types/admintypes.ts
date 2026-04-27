@@ -308,6 +308,7 @@ export interface AdminLoan {
   id: number;
   loan_id: string;
   farmer_name: string;
+  lender: number;
   lender_name: string;
   lender_type: 'platform' | 'investor';
   amount: number;
