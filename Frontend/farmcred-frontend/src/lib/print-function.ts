@@ -63,3 +63,8 @@ export function handlePrintTransfersPDF(transfers: Transfer[]) {
     ["Transfer ID", "Date", "Recipient/Sender", "Type", "Amount", "Status"]
   );
 }
+
+export const exportToCSV = (data?: any, filename?: string) => {
+  console.log("Export to CSV functionality coming soon...", data);
+  // This acts as a safe placeholder to satisfy TypeScript
+};
