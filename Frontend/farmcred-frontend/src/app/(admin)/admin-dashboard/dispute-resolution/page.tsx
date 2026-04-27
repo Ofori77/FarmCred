@@ -83,7 +83,7 @@ export default function DisputeResolution() {
   };
 
   const getPendingCount = () => {
-    return disputes?.filter(d => d.status === "pending").length || 0;
+    return disputes?.filter(d => d.status === "open").length || 0;
   };
 
   const getResolvedCount = () => {
