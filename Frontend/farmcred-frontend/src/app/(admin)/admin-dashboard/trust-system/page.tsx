@@ -85,120 +85,43 @@ export default function TrustSystem() {
             </Card>
           </div>
 
-          {/* Trust Level Distribution */}
+{/* Trust Level Distribution */}
           <Card>
             <CardHeader>
               <CardTitle>Trust Level Distribution</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-36 flex items-center">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      ))}
+                {[
+                  { stars: 5, count: data?.trust_level_distribution?.level_5_stars || 0 },
+                  { stars: 4, count: data?.trust_level_distribution?.level_4_stars || 0 },
+                  { stars: 3, count: data?.trust_level_distribution?.level_3_stars || 0 },
+                  { stars: 2, count: data?.trust_level_distribution?.level_2_stars || 0 },
+                  { stars: 1, count: data?.trust_level_distribution?.level_1_stars || 0 },
+                ].map((level) => (
+                  <div key={level.stars} className="flex items-center">
+                    <div className="w-36 flex items-center">
+                      <div className="flex">
+                        {[...Array(level.stars)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                        ))}
+                        {[...Array(5 - level.stars)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 text-gray-300" />
+                        ))}
+                      </div>
+                      <span className="ml-2 text-sm font-medium">{level.stars} Star{level.stars > 1 ? 's' : ''}</span>
                     </div>
-                    <span className="ml-2 text-sm font-medium">5 Stars</span>
-                  </div>
-                  <div className="flex-1">
-                    <Progress 
-                      value={(data?.trust_level_distribution.level_5_stars / data?.total_farmers) * 100} 
-                      className="h-3"
-                    />
-                  </div>
-                  <div className="w-16 text-right text-sm font-medium">
-                    {data?.trust_level_distribution.level_5_stars}
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-36 flex items-center">
-                    <div className="flex">
-                      {[...Array(4)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                      <Star className="h-4 w-4 text-gray-300" />
+                    <div className="flex-1">
+                      <Progress 
+                        value={(level.count / (data?.total_farmers || 1)) * 100} 
+                        className="h-3"
+                      />
                     </div>
-                    <span className="ml-2 text-sm font-medium">4 Stars</span>
-                  </div>
-                  <div className="flex-1">
-                    <Progress 
-                      value={(data?.trust_level_distribution.level_4_stars / data?.total_farmers) * 100} 
-                      className="h-3"
-                    />
-                  </div>
-                  <div className="w-16 text-right text-sm font-medium">
-                    {data?.trust_level_distribution.level_4_stars}
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-36 flex items-center">
-                    <div className="flex">
-                      {[...Array(3)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                      {[...Array(2)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-gray-300" />
-                      ))}
+                    <div className="w-16 text-right text-sm font-medium">
+                      {level.count}
                     </div>
-                    <span className="ml-2 text-sm font-medium">3 Stars</span>
                   </div>
-                  <div className="flex-1">
-                    <Progress 
-                      value={(data?.trust_level_distribution.level_3_stars / data?.total_farmers) * 100} 
-                      className="h-3"
-                    />
-                  </div>
-                  <div className="w-16 text-right text-sm font-medium">
-                    {data?.trust_level_distribution.level_3_stars}
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-36 flex items-center">
-                    <div className="flex">
-                      {[...Array(2)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      ))}
-                      {[...Array(3)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-gray-300" />
-                      ))}
-                    </div>
-                    <span className="ml-2 text-sm font-medium">2 Stars</span>
-                  </div>
-                  <div className="flex-1">
-                    <Progress 
-                      value={(data?.trust_level_distribution.level_2_stars / data?.total_farmers) * 100} 
-                      className="h-3"
-                    />
-                  </div>
-                  <div className="w-16 text-right text-sm font-medium">
-                    {data?.trust_level_distribution.level_2_stars}
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="w-36 flex items-center">
-                    <div className="flex">
-                      <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                      {[...Array(4)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-gray-300" />
-                      ))}
-                    </div>
-                    <span className="ml-2 text-sm font-medium">1 Star</span>
-                  </div>
-                  <div className="flex-1">
-                    <Progress 
-                      value={(data?.trust_level_distribution.level_1_stars / data?.total_farmers) * 100} 
-                      className="h-3"
-                    />
-                  </div>
-                  <div className="w-16 text-right text-sm font-medium">
-                    {data?.trust_level_distribution.level_1_stars}
-                  </div>
-                </div>
+                ))}
               </div>
             </CardContent>
           </Card>
