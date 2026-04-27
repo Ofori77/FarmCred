@@ -21,3 +21,13 @@ export function exportToCSV(data: any[], filename = "export.csv") {
   a.click();
   URL.revokeObjectURL(url);
 }
+
+export const handlePrintPDF = () => {
+  console.log("Print PDF functionality coming soon...");
+  window.print(); // This acts as a basic fallback that opens the browser's print dialog
+};
+
+export const handlePrintTransfersPDF = () => {
+  console.log("Print Transfers PDF functionality coming soon...");
+  window.print();
+};
