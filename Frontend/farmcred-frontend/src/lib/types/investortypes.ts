@@ -41,6 +41,7 @@ export interface FarmerProfile {
   receive_email_notifications?: boolean;
   transactions?: any[];
   transfers?: any[];
+  loans?: any[];
 }
 
 export interface InvestorReview{
